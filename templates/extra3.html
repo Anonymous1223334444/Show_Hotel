@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Liste des hôtels ayant des chambres non disponibles à la date d'aujourd'hui en considérant que la base de donnée est constamment mis à jour 👇️
+{% endblock %}
+
+{% block user_role %}
+
+{% if extra_3 %}
+
+        <table class="styled-table">    
+            <thead>
+                    <tr>
+                        <th>id_hotel</th>
+                        <th>nbr_room</th>
+                        <th>etat</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for rows in extra_3 %}
+                    <tr>
+                        {% for data in rows %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

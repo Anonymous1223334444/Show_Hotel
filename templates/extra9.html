@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}
+    Spectacles qui auront lieu un jour dddd donné
+{% endblock %}
+
+
+{% block user_role %}
+<form method="POST" class="user_role_form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button id="submit-btn" type="submit" name="action" value="btn_2">Submit</button>
+</form>
+    {% if selected_date %}
+        <h3 class="title title_2">Les spectacles qui auront lieu le <span>{{ selected_date }}</span> 👇️</h3>
+
+            {% if extra_9|length == 0 %}
+            <table class="styled-table">
+                <thead id="aucun">
+                    <tr>
+                        <th>Aucun élément dans la base de donnée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_______________________________________________________________________________________________________________</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% else %}
+            <table class="styled-table">    
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>categorie_spectacle</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in extra_9 %}
+                    <tr>
+                        {% for data in row %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        {% endif %}
+{% endblock %}

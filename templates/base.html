@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Test App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <button id="side_btn" class="btn_page" data-url="request_1" >
+                Requête 1
+            </button>
+            <button id="side_btn" class="btn_page" data-url="request_2">
+                Requête 2
+            </button>
+            <button id="side_btn" class="btn_page" data-url="request_3">
+                Requête 3
+            </button>
+            <button id="side_btn" class="btn_page" data-url="request_4">
+                Requête 4
+            </button>
+            <button id="side_btn" class="btn_page" data-url="request_5">
+                Requête 5
+            </button>
+        </aside>
+        <main>
+            <div class="scrollable-content">
+                <header>
+                    <h2>Ĥ_S</h2>
+                    <form method="post" class="search-bar">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Mysql request Syntaxe" name="sql_syntax">
+                        <button type="submit" name="action" value="btn_1"><img src="{% static 'search.png' %}" alt=""></button>
+                    </form>
+                </header>
+
+                <div class="extras">
+                    <div class="extras-button">
+                        <button class="btn-extra btn_page" data-tab="extra_1">Extra 1</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_2">Extra 2</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_3">Extra 3</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_4">Extra 4</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_5">Extra 5</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_6">Extra 6</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_7">Extra 7</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_8">Extra 8</button>
+
+                        <button class="btn-extra btn_page" data-tab="extra_9">Extra 9</button>
+                    </div>
+
+                </div>
+                
+                <h3 class="title" name="title">
+                    {% block title %}
+                        
+                    {% endblock %}
+                </h3>
+                <section class="user_role">
+                    {% block user_role %}
+                        
+                    {% endblock %}
+                </section>
+        
+                <section>
+                    {% if result %}
+                    <!-- {{ result.2.date_spectacle.values }} -->
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    {% for key in result.0.keys %}
+                                        <th>{{ key }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in result %}
+                                    <tr>
+                                        {% for value in row.values %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </section>
+            </div>
+        </main>
+    </div>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <script type = "text/javascript" src="{% static 'script.js' %}"></script>
+</body>
+</html>

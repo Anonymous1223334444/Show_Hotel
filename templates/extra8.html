@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Distances entre spectacle et spectacle 👇️
+{% endblock %}
+
+{% block user_role %}
+
+{% if extra_8 %}
+
+        <table class="styled-table">    
+            <thead>
+                    <tr>
+                        <th>spectacle</th>
+                        <th>another_spectacle</th>
+                        <th>Distance</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for rows in extra_8 %}
+                    <tr>
+                        {% for data in rows %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
