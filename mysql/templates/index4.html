@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}
+    La ville proposant le séjour de trois jours le plus cher ; ici, séjour veut dire 2 nuits d'hôtel avec spectacles
+    chaque soirée précédant les 2 nuitées, le tout dans la même ville 👇️
+{% endblock %}
+
+
+{% block user_role %}
+        <form method="POST" class="user_role_form">
+            {% csrf_token %}
+            <button id="submit-btn" id="btn-alone" type="submit" name="action" value="btn_2">Submit</button>
+        </form>
+        {% if request_4 %}
+
+        {% if request_4|length == 0 %}
+        <table class="styled-table">
+            <thead id="aucun">
+                <tr>
+                    <th>Aucun élément dans la base de donnée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>_______________________________________________________________________________________________________________</td>
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+        <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>id_ville</th>
+                        <th>ville_name</th>
+                        <th>prix_sejour_3_jours</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in request_4 %}
+                    <tr>
+                        {% for data in row %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        {% endif %}
+        </table>
+        {% endif %}
+{% endblock %}

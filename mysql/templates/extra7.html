@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Distances entre hotel et hotel 👇️
+{% endblock %}
+
+{% block user_role %}
+
+{% if extra_7 %}
+
+        <table class="styled-table">    
+            <thead>
+                    <tr>
+                        <th>hotel</th>
+                        <th>another_hotel</th>
+                        <th>Distance</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for rows in extra_7 %}
+                    <tr>
+                        {% for data in rows %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
