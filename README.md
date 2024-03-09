@@ -8,4 +8,4 @@ Simple interface that manages hotel and show reservations made using the django 
     pip3 install -r ~/mysql_projet/mysql/requirement.txt
 ## After the installation of all packages run the django server with: 
     python3 ~/manage.py runserver 
-and check the app layout and test the functionnality. It's yours now 😁️ !
+## and check the app layout and test the functionnality. It's yours now 😁️ !
