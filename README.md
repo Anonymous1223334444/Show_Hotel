@@ -11,4 +11,4 @@
     
 ### After the installation of all packages run the django server with: 
     python3 ~/Projet_SGBD_DITI1/mysql/manage.py runserver 
-### Check the app layout and test the functionnality. It's yours now 😁️ !
+### Check the app layout and test the functionnalities. It's yours now 😁️ !
