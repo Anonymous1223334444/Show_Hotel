@@ -1,4 +1,4 @@
-# Projet_SGBD_DITI1
+# Show_Hotel
 
 ### Simple interface that manages hotel and show reservations made using the django framework and mysql server. All back-end processes happens locally.
 
@@ -7,8 +7,7 @@
 ### All dependencies of our virtualenv are stored in requirement.txt file. After activating the virtualenv with:
     source ~/env/bin/activate
 ### type the following command:
-    pip3 install -r ~/Projet_SGBD_DITI1/mysql/requirement.txt
+    pip3 install -r ~/Show_Hotel/mysql/requirement.txt
     
 ### After the installation of all packages run the django server with: 
-    python3 ~/Projet_SGBD_DITI1/mysql/manage.py runserver 
-### Check the app layout and test the functionnalities. It's yours now 😁️ !
+    python3 ~/Show_Hotel/mysql/manage.py runserver 
