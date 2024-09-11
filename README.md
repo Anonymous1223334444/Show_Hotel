@@ -1,3 +1,7 @@
+# Preview
+
+![Show_Hotel](https://drive.google.com/uc?id=1afTsTdn6-dIsOEKa1-W80DsE5-vXmq30)
+
 # Show_Hotel
 
 ### Simple interface that manages hotel and show reservations made using the django framework and mysql server. All back-end processes happens locally.
